@@ -2,10 +2,10 @@
 let counter = document.querySelector('#counter');
 let btnInc = document.querySelector('#btn-inc');
 let btnDec = document.querySelector('#btn-dec');
-let btnRes = document.querySelector('#btn-reset');
-let count = 0;
+
 
 //* Alt-1
+// let count = 0;
 // btnInc.addEventListener('click', incNum);
 // function incNum(){
 //   counter.innerHTML = ++count;
@@ -24,6 +24,7 @@ let count = 0;
 
 
 //* Alt-2
+// let count = 0;
 // btnInc.addEventListener('click', function(){
 //   count++;
 //   counter.innerHTML = count;
@@ -41,16 +42,19 @@ let count = 0;
 
 
 //* Alt-3
+// let count = 0;
+
 // btnInc.addEventListener('click', ()=>{counter.innerHTML = ++count;});
 
 // btnDec.addEventListener('click', ()=>{counter.innerHTML = --count;});
 
 // btnRes.addEventListener('click', ()=>{
-//  count = 0;
-//  counter.innerHTML = count;
+//   count = 0;
+//   counter.innerHTML = count;
 // });
 
 //* Alt-4
+// let count = 0;
 // btnInc.addEventListener('click', clickEvent);
 // btnDec.addEventListener('click', clickEvent);
 // btnRes.addEventListener('click', clickEvent);
@@ -65,16 +69,32 @@ let count = 0;
 // }
 
 //* Alt-5
+// let count = 0;
+// btnInc.addEventListener('click', clickEvent);
+// btnDec.addEventListener('click', clickEvent);
+// btnRes.addEventListener('click', clickEvent);
+
+// function clickEvent(){
+//   this.id === 'btn-inc' ? count++ :
+//   this.id === 'btn-dec' ? count-- :
+//   this.id === 'btn-reset' ? count = 0 :
+//   false;
+
+//   counter.innerHTML = count;
+// }
+
+//* Alt-6 (Saving to localStorage)
+let count = localStorage.getItem('counter') ?  Number(localStorage.getItem('counter')) : 0;
 btnInc.addEventListener('click', clickEvent);
 btnDec.addEventListener('click', clickEvent);
 btnRes.addEventListener('click', clickEvent);
 
 function clickEvent(){
-  console.log(this.id);
   this.id === 'btn-inc' ? count++ :
   this.id === 'btn-dec' ? count-- :
   this.id === 'btn-reset' ? count = 0 :
   false;
 
+  localStorage.setItem('counter', count);
   counter.innerHTML = count;
 }
