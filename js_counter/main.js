@@ -51,15 +51,30 @@ let count = 0;
 // });
 
 //* Alt-4
+// btnInc.addEventListener('click', clickEvent);
+// btnDec.addEventListener('click', clickEvent);
+// btnRes.addEventListener('click', clickEvent);
+
+// function clickEvent(){
+//   console.log(this.id);
+//   if(this.id === 'btn-inc') count++;
+//   else if(this.id === 'btn-dec') count--;
+//   else if(this.id === 'btn-reset') count = 0;
+
+//   counter.innerHTML = count;
+// }
+
+//* Alt-5
 btnInc.addEventListener('click', clickEvent);
 btnDec.addEventListener('click', clickEvent);
 btnRes.addEventListener('click', clickEvent);
 
 function clickEvent(){
   console.log(this.id);
-  if(this.id === 'btn-inc') count++;
-  else if(this.id === 'btn-dec') count--;
-  else if(this.id === 'btn-reset') count = 0;
+  this.id === 'btn-inc' ? count++ :
+  this.id === 'btn-dec' ? count-- :
+  this.id === 'btn-reset' ? count = 0 :
+  false;
 
   counter.innerHTML = count;
 }
